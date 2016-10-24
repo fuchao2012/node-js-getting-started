@@ -24,7 +24,7 @@ npm install
 关联应用：
 
 ```
-lean app add origin <appId>
+lean app add origin FhWyhaOlYrUuvAkRSElEmyTE-gzGzoHsz
 ```
 
 这里的 appId 填上你在 LeanCloud 上创建的某一应用的 appId 即可。origin 则有点像 Git 里的 remote 名称。
