@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册站长信息</title>
+    <!-- Bootstrap -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/regist.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">CTC</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/todos">查询</a></li>
+        <li><a href="/maps">地图</a></li>
+        <li><a href="/regist">注册</a></li>
+        <li><a href="#">登录</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <div class="container">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="身份信息">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="地址信息">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="联系方式">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step4" data-toggle="tab" aria-controls="step3" role="tab" title="有线电视">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step5" data-toggle="tab" aria-controls="step3" role="tab" title="宽带">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="完成">
+                                    <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form role="form">
+                        <div class="tab-content">
+                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="username" placeholder="姓名" required data-toggle="tooltip" data-placement="top"
+                                                title="签协议的人与提供银行帐号开户人一致">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="username" placeholder="姓别">
+                                        </div>  
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="userId" placeholder="身份证号" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="bankNum" placeholder="银行帐号">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" id="bankAddress" placeholder="开户行地址">
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-primary next-step">保存并继续</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step2">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="installAddress" placeholder="设备安装地址" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="liveAddress" placeholder="您的居住地址">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="resiveAddress" placeholder="平时邮寄物品的收货地址" required data-toggle="tooltip" data-placement="top"
+                                                title="如收件人不是站长本人的须注明收件人姓名、电话" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">上一步</button></li>
+                                    <li><button type="button" class="btn btn-primary next-step">保存并继续</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step3">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="phone" placeholder="联系电话" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="phone2" placeholder="备用联系人姓名及电话">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="qq" placeholder="QQ号">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="email" class="form-control" id="email" placeholder="邮箱" required data-toggle="tooltip" data-placement="top"
+                                                title="如收件人不是站长本人的须注明收件人姓名、电话" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">上一步</button></li>
+                                    <li><button type="button" class="btn btn-primary next-step">保存并继续</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step4">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="hasTv" placeholder="是否已经安装有线电视" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvName" placeholder="有线电视运营商名称" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvBoxPay" placeholder="机顶盒购买费" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvPay" placeholder="收视费" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">上一步</button></li>
+                                    <li><button type="button" class="btn btn-primary next-step">保存并继续</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step5">
+                                <div class="step1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="hasTv" placeholder="是否已经安装宽带" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvName" placeholder="宽带运营商名称" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvBoxPay" placeholder="宽带类型" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvPay" placeholder="带宽" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="tvPay" placeholder="费用" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-default prev-step">上一步</button></li>
+                                    <li><button type="button" class="btn btn-primary next-step">保存并继续</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="complete">
+                                <div class="step1">
+                                    <h5>恭喜您提交审核成功，系统将会在5个工作日之内通过短信形式通知您审核结果</h5>
+                                    <img src="" alt="">
+                                    <p>关注公众号，实时查询审核结果</p>
+                                    <a href="/">返回首页</a>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/distpicker/2.0.0-beta.1/distpicker.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    //Initialize tooltips
+    $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+        var $target = $(e.target);
+    
+        if ($target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        prevTab($active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+
+
+//according menu
+
+$(document).ready(function()
+{
+    //Add Inactive Class To All Accordion Headers
+    $('.accordion-header').toggleClass('inactive-header');
+	
+	//Set The Accordion Content Width
+	var contentwidth = $('.accordion-header').width();
+	$('.accordion-content').css({});
+	
+	//Open The First Accordion Section When Page Loads
+	$('.accordion-header').first().toggleClass('active-header').toggleClass('inactive-header');
+	$('.accordion-content').first().slideDown().toggleClass('open-content');
+	
+	// The Accordion Effect
+	$('.accordion-header').click(function () {
+		if($(this).is('.inactive-header')) {
+			$('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().slideToggle().toggleClass('open-content');
+			$(this).toggleClass('active-header').toggleClass('inactive-header');
+			$(this).next().slideToggle().toggleClass('open-content');
+		}
+		
+		else {
+			$(this).toggleClass('active-header').toggleClass('inactive-header');
+			$(this).next().slideToggle().toggleClass('open-content');
+		}
+	});
+	
+	return false;
+});
+
+$('#radioBtn a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+})
+    </script>
+</body>
+
+</html>

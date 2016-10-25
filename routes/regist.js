@@ -9,13 +9,13 @@ router.get('/',function(req,res,next){
     query.startsWith('country',req.query.content || '');
     console.log('\n\n search',req.query.content || '')
     query.find().then(function(results){
-        res.render('todos',{
+        res.render('regist',{
             sites: results
         });
     },function(err){
       console.log(err);
         if (err.code === 101) {
-      res.render('todos', {
+      res.render('regist', {
         sites: []
       });
     } else {
