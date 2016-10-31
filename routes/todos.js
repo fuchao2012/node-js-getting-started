@@ -2,7 +2,7 @@
 var router = require('express').Router();
 var AV = require('leanengine');
 
-var UnsignedSite = AV.Object.extend('siteinfo');
+var UnsignedSite = AV.Object.extend('siteInfo');
 router.get('/',function(req,res,next){
     var query = new AV.Query(UnsignedSite);
     query.descending('createdAt');
