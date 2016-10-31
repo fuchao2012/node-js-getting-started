@@ -1,129 +1,159 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>地区检索</title>
 
-    <!-- Bootstrap -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>地区检索</title>
+  <!-- Bootstrap -->
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>    
-	    <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">CTC</a>
+        <a class="navbar-brand" href="/">CTC</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/todos">查询</a></li>
+          <li><a href="/maps">地图</a></li>
+          <li><a href="/regist">注册</a></li>
+          <li><a href="#">登录</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/todos">查询</a></li>
-        <li><a href="/maps">地图</a></li>
-        <li><a href="/regist">注册</a></li>
-        <li><a href="#">登录</a></li>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="row">
+    <div class="col-sm-12">
+      <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-tabs-horizontal">
+        <li class="active"><a href="#htab1" data-toggle="tab">地区搜索</a></li>
+        <li><a href="#htab2" data-toggle="tab">地区选择</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
- <div class="row">
-        <div class="col-sm-12">
-            <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary">查找站点</a>
-            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-tabs-horizontal">
-              <li class="active"><a href="#htab1" data-toggle="tab">地区搜索</a></li>
-              <li><a href="#htab2" data-toggle="tab">地区选择</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="htab1">
-                    <form id="custom-search-input" method="GET" action="/todos">
-                <div class="input-group col-md-12">
-                    <input type="text" name="content" class="form-control input-lg" placeholder="搜索区县名" />
-                    <span class="input-group-btn">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="htab1">
+          <form id="custom-search-input" method="GET" action="/todos">
+            <div class="input-group col-md-12">
+              <input type="text" name="content" class="form-control input-lg" placeholder="搜索区县名" />
+              <span class="input-group-btn">
                         <i class="glyphicon glyphicon-search"></i>
                       </span>
-                    </div>
-                  </form>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="htab2">
-                <form action="/todos" method="GET">
-                    <div data-toggle="distpicker" class="form-inline">
-                      <select class="form-control" data-province="---- 选择省 ----"></select>
-                      <select class="form-control" data-city="---- 选择市 ----"></select>
-                      <select class="form-control" name="content" data-district="---- 选择区 ----"></select>
-                      <button class="form-control" class="btn btn-primary" type="submit" value="">查询</button>
-                    </div>
-                </form>
-                </div>                
             </div>
+          </form>
         </div>
+        <div role="tabpanel" class="tab-pane fade" id="htab2">
+          <form action="/todos" method="GET">
+            <div data-toggle="distpicker" class="form-inline">
+              <select class="form-control" data-province="---- 选择省 ----"></select>
+              <select class="form-control" data-city="---- 选择市 ----"></select>
+              <select class="form-control" name="content" data-district="---- 选择区 ----"></select>
+              <button class="form-control" class="btn btn-primary" type="submit" value="">查询</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div class="container">
+  </div>
+  <div class="container">
     <% if (sites.length == 0) { %>
-    <section class="col-xs-12 col-sm-12 col-md-12">
-		<article class="search-result row">
-			<div class="col-xs-12 col-sm-12 col-md-12 excerpet">
-				<h3>请输入正确的区县名称</h3>
-	    </section>
-    <% } else { %>
-    <% for(var i=0; i<sites.length; i++) {%>      
-    <section class="col-xs-12 col-sm-12 col-md-12">
-		<article class="search-result row">
-			<div class="col-xs-12 col-sm-12 col-md-12 excerpet">
-				<h3><i class="glyphicon glyphicon-heart"></i>
-        信息站：<a href="#"> </a></h3>
-        </div>
-        <div class="col-xs-4 col-sm-12 col-md-4">
-          <h5>基础信息</h5>
-				  <ul class="meta-search">
-          	<li>站点地址：<%= sites[i].get('prov') %>, <%= sites[i].get('city') %>, <%= sites[i].get('country') %></li>
-            <li>地域编码: <%= sites[i].get('cityId') %></li>					  
-					  <li>国家行政级别:  <%= sites[i].get('cityClass') %> <%= (sites[i].get('isProvCenter') == '1') ? '省站': '' %> <%= (sites[i].get('isCityCenter') == '1') ? '市站': '' %></li>
-            <li>站点级别:  <%= sites[i].get('siteClass') %> </li>
-				  </ul>
-			  </div>
-        <div class="col-xs-4 col-sm-12 col-md-4">
-          <h5>站点信息</h5>
-				  <ul class="meta-search">
-            <li>站点名称：<%= sites[i].get('siteName') %></li>
-					  <li>联系时间：<%= sites[i].get('contactTime') %></li>
-					  <li>连接时间：<%= sites[i].get('connectTime') %></li>
-            <li>回传时间：<%= sites[i].get('returnTime') %></li>
-            <li>建站协议：<%= sites[i].get('protocal') %>, 设备安装：<% sites[i].get('installed') %> </li>
-				  </ul>
-			  </div>
-        <div class="col-xs-4 col-sm-12 col-md-4">
-          <h5>采集站状态</h5>
-          <% if(sites[i].get('siteStatus') == '－') { %>
-           <a class="btn btn-primary" href="/regist">立即去建站</a> 
-          <% } else { sites[i].get('siteStatus') } %>
-			  </div>
-	    </section>
-      <% } %>
-      <% } %>
-    </div>
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/distpicker/2.0.0-beta.1/distpicker.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
+      <section class="col-xs-12 col-sm-12 col-md-12">
+        <article class="search-result row">
+          <div class="col-xs-12 col-sm-12 col-md-12 excerpet">
+            <h3>请输入正确的区县名称</h3>
+      </section>
+      <% } else { %>
+        <% for(var i=0; i<sites.length; i++) {%>
+          <section class="col-xs-12 col-sm-12 col-md-12">
+            <article class="search-result row">
+              <div class="col-xs-12 col-sm-12 col-md-12 excerpet">
+                <h3><i class="glyphicon glyphicon-heart"></i> 信息站：
+                  <a href="#"> </a>
+                </h3>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-4">
+                <h5>基础信息</h5>
+                <ul class="meta-search">
+                  <li>站点地址：
+                    <%= sites[i].get('prov') %>,
+                      <%= sites[i].get('city') %>,
+                        <%= sites[i].get('country') %>
+                  </li>
+                  <li>地域编码:
+                    <%= sites[i].get('cityId') %>
+                  </li>
+                  <li>国家行政级别:
+                    <%= sites[i].get('cityClass') %>
+                      <%= (sites[i].get('isProvCenter') == '1') ? '省站': '' %>
+                        <%= (sites[i].get('isCityCenter') == '1') ? '市站': '' %>
+                  </li>
+                  <li>站点级别:
+                    <%= sites[i].get('siteClass') %>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-4">
+                <h5>站点信息</h5>
+                <ul class="meta-search">
+                  <li>站点名称：
+                    <%= sites[i].get('siteName') %>
+                  </li>
+                  <li>联系时间：
+                    <%= sites[i].get('contactTime') %>
+                  </li>
+                  <li>连接时间：
+                    <%= sites[i].get('connectTime') %>
+                  </li>
+                  <li>回传时间：
+                    <%= sites[i].get('returnTime') %>
+                  </li>
+                  <li>建站协议：
+                    <%= sites[i].get('protocal') %>, 设备安装：
+                      <% sites[i].get('installed') %>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="search-result row">
+              <div class="col-xs-6 col-sm-6 col-md-4">
+                <h5><i class="glyphicon glyphicon-star"></i>采集站状态</h5>
+                <% if(sites[i].get('siteStatus') == '－') { %>
+                  <p>尚未建站</p>
+                  <a class="btn btn-primary" href="/regist">立即去建站</a>
+                  <% } else { %>
+                    <p>
+                      <%= sites[i].get('siteStatus') %>
+                    </p>
+                    <% } %>
+              </div>
+            </article>
+          </section>
+          <% } %>
+            <% } %>
+              </div>
+              <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+              <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+              <script src="//cdn.bootcss.com/distpicker/2.0.0-beta.1/distpicker.min.js"></script>
+              <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
 </html>
